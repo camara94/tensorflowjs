@@ -7,3 +7,5 @@
 4. [https://community.deeplearning.ai/t/tf-data-and-deployment-course-1-lecture-notes/61289/2](https://community.deeplearning.ai/t/tf-data-and-deployment-course-1-lecture-notes/61289/2)
 
 5. [https://www.youtube.com/watch?v=aircAruvnKk](https://www.youtube.com/watch?v=aircAruvnKk)
+
+6. [https://www.youtube.com/watch?v=SV-cgdobtTA](https://www.youtube.com/watch?v=SV-cgdobtTA)
