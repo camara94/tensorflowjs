@@ -9,3 +9,4 @@
 5. [https://www.youtube.com/watch?v=aircAruvnKk](https://www.youtube.com/watch?v=aircAruvnKk)
 
 6. [https://www.youtube.com/watch?v=SV-cgdobtTA](https://www.youtube.com/watch?v=SV-cgdobtTA)
+7. [https://codelabs.developers.google.com/codelabs/tfjs-training-classfication/index.html?hl=fr#6](https://codelabs.developers.google.com/codelabs/tfjs-training-classfication/index.html?hl=fr#6)
