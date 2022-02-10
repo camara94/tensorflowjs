@@ -27,28 +27,37 @@ const run = async () => {
         inputShape: [ numbersOfFeatures ], 
         activation: 'relu' } ) 
     );
-    model.add( tf.layers.dense( { units: 2, activation: 'softmax' } ) );
+    model.add( tf.layers.dense( { units: 2, activation: 'sigmoid' } ) );
     model.summary()
 
     // compilation du modèle
-    model.compile( { optimizer: tf.train.adam(0.06), loss: 'meanSquaredError' } );
+    model.compile( { 
+        optimizer: tf.train.adam(0.06), 
+        loss: 'meanSquaredError',
+        metrics: ['accuracy'] 
+    } );
 
     // entrainement du modèle
     await model.fitDataset( convertedData, {
         epochs: 100,
+        shuffle: true,
         callbacks: {
             onEpochEnd: async (epoch, logs) => {
-                console.log('Epoch: ' + epoch + ' Loss: ' + logs.loss)
+                console.log(
+                    'Epoch: ' + epoch 
+                  + ' Loss: ' + logs.loss
+                  + ' Accuracy: ' + logs.acc 
+                  )
             }
         }
     } );
 
     // prédictions
-    const columnNames = ['Mort', 'Survéçu'];
-    const feature = tf.tensor2d([1.0,1.0,0.45272319662402744], [1, 3])
+    const columnNames = ['Mort', 'Survécu'];
+    const feature = tf.tensor2d([3,0,47.0], [1, 3]);
     let prediction = model.predict(feature);
-
-    alert(prediction)
+    const indexMax = tf.argMax(prediction, axis=1).dataSync();
+    alert(columnNames[indexMax]);
     
 }
 
